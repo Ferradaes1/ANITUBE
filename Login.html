@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost&family=Maven+Pro:wght@600&family=Open+Sans:wght@800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="SITE_ANIME .css">
+    <style>
+        h1 {
+            font-family: 'Jost', sans-serif;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            font-family: 'Maven Pro', sans-serif;
+        }
+
+        a.data-t {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .semibold {
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container show">
+        <a href="index.html">
+            <h1>ANITUBE</h1>
+        </a>
+        <form action="processar_login.php" method="POST">
+            <div class="A">
+                <h2></h2>
+                <input type="text" name="usuario" placeholder="Nome de usuário" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="submit" value="Entrar">
+                <h3>
+                    Não possui conta?
+                    <a class="data-t" data-t="login-create-account-cta" href="CADASTRAR TESTE.html"><span
+                            class="s-1d5xpni-CallToAction e9jtolp0">Crie a sua</span></a>
+                </h3>
+                <span class="semibold">Esqueceu a senha?</span>
+            </div>
+        </form>
+    </div>
+    <div class="background-image"></div>
+
+    <!-- SCRIPTS -->
+    <script>
+        //SCRIPT CONTAINER 
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".container");
+            container.classList.add("show");
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector(".container");
+
+            // Remova as classes "show" e "transition" se já estiverem presentes
+            container.classList.remove("show");
+            container.classList.remove("transition");
+
+            // Aguarde um pequeno atraso antes de adicionar a classe "show"
+            setTimeout(() => {
+                container.classList.add("show");
+            }, 10);
+
+            // Aguarde um atraso adicional antes de adicionar a classe "transition"
+            setTimeout(() => {
+                container.classList.add("transition");
+            }, 1000); // Ajuste o valor do atraso conforme necessário
+
+            // Adicione um ouvinte para recarregar a página
+            window.addEventListener("beforeunload", function () {
+                container.classList.remove("show");
+                container.classList.remove("transition");
+            });
+        });
+    </script>
+</body>
+
+</html>
